@@ -24,25 +24,16 @@
 
 ;;; Code:
 
-;; * constants
-
-(defconst codebug-version "0.0.1")
-
+;;;###autoload
 (defun codebug ()
-  "Run CodeBug"
+  "Run CodeBug."
   (interactive)
-  (if (eq system-type 'darwin)
-    (progn
-     (setq linenumber (number-to-string (line-number-at-pos)))
-     (setq filename (buffer-file-name))
-    (setq command (concat "open 'codebug://send?file=" filename "&line=" linenumber "&op=add&open=1'"))
-    (shell-command command)
-    )
-    (message "Sorry, OSX support only")
-  )
-)
-
-;; * provide
+  (unless (eq system-type 'darwin)
+    (error "Sorry, OSX support only."))
+  (message (format "open 'codebug://send?file=%s&line=%d&op=add&open=1'"
+                         (or (buffer-file-name)
+                             (error "Buffer is not visiting a file."))
+                         (line-number-at-pos))))
 
 (provide 'codebug)
 
