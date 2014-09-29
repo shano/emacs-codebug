@@ -1,7 +1,7 @@
 emacs-codebug
 =============
 
-Emacs plugin for interaction with Codebug(http://codebugapp.com)
+Emacs plugin for interaction with Codebug (http://codebugapp.com)
 
 Usage
 =====
