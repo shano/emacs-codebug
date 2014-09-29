@@ -30,7 +30,7 @@
   (interactive)
   (unless (eq system-type 'darwin)
     (error "Sorry, OSX support only."))
-  (message (format "open 'codebug://send?file=%s&line=%d&op=add&open=1'"
+  (shell-command (format "open 'codebug://send?file=%s&line=%d&op=add&open=1'"
                          (or (buffer-file-name)
                              (error "Buffer is not visiting a file."))
                          (line-number-at-pos))))
