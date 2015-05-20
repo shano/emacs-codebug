@@ -34,3 +34,7 @@ Customization
 To set up a shortcut for example C-c b, add this to your .emacs
 
     (global-set-key (kbd "C-c b") 'codebug)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shano/emacs-codebug/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
